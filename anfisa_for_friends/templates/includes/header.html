@@ -15,18 +15,30 @@
       <div class="collapse navbar-collapse" id="navbarNav">                      
         <ul class="nav nav-pills">
           <li class="nav-item">              
-            <a class="nav-link" href="index.html">
+            <a class="nav-link
+              {% if request.resolver_match.view_name  == 'homepage:index' %}
+               active
+              {% endif %}"
+              href="index.html">
               Главная
             </a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ice_cream_list.html">
+            <a class="nav-link
+              {% if request.resolver_match.view_name  == 'homepage:index' %}
+               active
+              {% endif %}"
+              href="ice_cream_list.html">
               Каталог мороженого
             </a> 
           </li>
           <li class="nav-item">
             <!-- Добавлен класс active -->
-            <a class="nav-link" href="about.html">
+            <a class="nav-link
+              {% if request.resolver_match.view_name  == 'homepage:index' %} <-ПОМЕНЯТЬ INDEX на другое чтото!!!/->
+               active
+              {% endif %}" 
+              href="about.html">
               О проекте
             </a> 
           </li>
