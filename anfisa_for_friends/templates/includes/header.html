@@ -1,52 +1,56 @@
+{% load static %}
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+  >
     <div class="container">
-      <div 
-        class="navbar-toggler" 
-        type="button" 
-        data-toggle="collapse" 
-        data-target="#navbarNav" 
-        aria-controls="navbarNav" 
-        aria-expanded="false" 
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
         aria-label="Toggle navigation"
-        >
+      >
         <span class="navbar-toggler-icon"></span>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarNav">                      
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav nav-pills">
-          <li class="nav-item">              
-            <a class="nav-link
-              {% if request.resolver_match.view_name  == 'homepage:index' %}
-               active
-              {% endif %}"
-              href="index.html">
+          <li class="nav-item">
+            <a
+              class="nav-link{% if request.resolver_match.view_name == 'homepage:index' %} active{% endif %}"
+              href="{% url 'homepage:index' %}"
+            >
               Главная
-            </a> 
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link
-              {% if request.resolver_match.view_name  == 'homepage:index' %}
-               active
-              {% endif %}"
-              href="ice_cream_list.html">
+            <a
+              class="nav-link{% if request.resolver_match.view_name == 'ice_cream:ice_cream_list' %} active{% endif %}"
+              href="{% url 'ice_cream:ice_cream_list' %}"
+            >
               Каталог мороженого
-            </a> 
+            </a>
           </li>
           <li class="nav-item">
-            <!-- Добавлен класс active -->
-            <a class="nav-link
-              {% if request.resolver_match.view_name  == 'homepage:index' %} <-ПОМЕНЯТЬ INDEX на другое чтото!!!/->
-               active
-              {% endif %}" 
-              href="about.html">
+            <a
+              class="nav-link{% if request.resolver_match.view_name == 'about:description' %} active{% endif %}"
+              href="{% url 'about:description' %}"
+            >
               О проекте
-            </a> 
+            </a>
           </li>
         </ul>
-      </div> 
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.png" height="50" class="d-inline-block align-top" alt="">            
-      </a>         
+      </div>
+      <a class="navbar-brand" href="{% url 'homepage:index' %}">
+        <img
+          src="{% static 'img/logo.png' %}"
+          height="50"
+          class="d-inline-block align-top"
+          alt=""
+        />
+      </a>
     </div>
   </nav>
 </header>

@@ -90,7 +90,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static_dev',
-    ]
+    '/Users/artemrebrikov/Documents/Programming/Python/Yandex_Praktika/Projects/Dev/anfiska/anfisa_for_friends/static_dev',
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
