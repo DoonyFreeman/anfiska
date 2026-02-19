@@ -13,6 +13,10 @@
     <p>{{ ice_cream.description }}</p>
   </div>
   <div class="col-12 col-md-6 mb-3">
+    <h3>Цена: {{ ice_cream.price }} ₽</h3>
+    {% if not ice_cream.is_available %}
+    <p class="text-danger">Извините, нет в наличии.</p>
+    {% endif %}
     <img
       class="img-fluid"
       height="400"

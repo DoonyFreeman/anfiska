@@ -11,7 +11,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'ice_cream.apps.IceCreamConfig',
-    'cinema.apps.CinemaConfig',
+    # 'cinema.apps.CinemaConfig',  # removed: app not present in project
     'about.apps.AboutConfig',
     'django.contrib.admin',
     'django.contrib.auth',
